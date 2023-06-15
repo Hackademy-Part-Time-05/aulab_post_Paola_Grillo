@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family:'Rubik', sans-serif;;
+    background-color: #fff;
+    background-image: url(https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?size=626&ext=jpg&ga=GA1.1.1448058093.1677063228&semt=ais);
+    background-repeat: no-repeat;
+    background-size: cover ;
+}
+
+.logo {
+    height: 40px;
+    width: 50px;
+}
+
+nav {
+    width: 100%;
+    padding: 0 20px;
+    background: rgb(235, 231, 219);
+}
+
+.menu {
+    list-style: none;
+}
+
+
+.menu li{
+    display: inline;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.menu a {
+    display: block;
+    padding: 10px 5px;
+    text-decoration: none;
+    transition: 0.3s;
+    color: #000;
+}
+
+.menu a:hover {
+    color: #00d4ff;
+    border-bottom: 3px solid #00d4ff;
+    border-radius: 3px;
+}
+
+.btn {
+    border-color: 3px solid black;
+}
+
+/* Animated Search Bar  */
+.search {
+    display: flex;
+    background: linear-gradient(45deg, #333, #5A5454);
+    height: 30px;
+    padding: px;
+}
+
+.search:hover input {
+    width: 250px;
+    padding: 0 10px;
+}
+
+.search:hover button {
+    background-color: #E6E6E6;
+}
+.search:hover input button {
+    border-radius: 50%;
+}
+
+.search input {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    font-size: 14px;
+    color: #fff;
+    width: 0;
+    transition: 1s;
+}
+
+.search button {
+    color: #00B7FF;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #333;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.rounded{
+        -webkit-border-radius: 20px;
+        
+        -moz-border-radius: 20px;
+        
+        }
+
+
+
+/* Start Footer */
+.footer-basic {
+    padding:40px 0;
+    background-color:#111111;
+    color:#4b4c4d;
+  }
+  
+  .footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+  }
+  
+  .footer-basic li {
+    padding:0 10px;
+  }
+  
+  .footer-basic ul a {
+    color:white;
+    text-decoration:none;
+    opacity:0.8;
+  }
+  
+  .footer-basic ul a:hover {
+    opacity:1;
+  }
+  
+  .footer-basic .social {
+    text-align:center;
+    padding-bottom:25px;
+  }
+  
+  .footer-basic .social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #00d4ff;
+    margin:0 8px;
+    /* color:inherit; */
+    opacity:0.75;
+  }
+  
+  .footer-basic .social > a:hover {
+    opacity:0.9;
+  }
+  
+  .footer-basic .copyright {
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
+  }
+
+  .list a:hover{
+    color: #00d4ff;
+    border-bottom: 3px solid #00d4ff;
+  }
+
+  .social a:hover{
+    color: #00d4ff;
+    border-color: #00d4ff;
+  }

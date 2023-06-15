@@ -3,61 +3,28 @@
     <div class="container-fluid p-5 bg-info text-center text-white">
         <div class="row justify-content-center">
             <h1 class="display-1">
-                Modifica un articolo
+                Redattore {{ $editor->name }}
             </h1>
         </div>
     </div>
 
     <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8">
-                
-                @if($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
+        <div class="row justify-content-around">
+            @foreach ($articles as $article)
+                <div class="col-12 col-md-3 my-2">
+                    <div class="card">
+                        <img src="{{ Storage::url($article->image)}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $article->title }}</h5>
+                            <p class="card-text">{{ $article->subtitle }}</p>
+                        </div>
+                        <div class="card-footer text-muted d-flex justify-content-between align-items-center">
+                            Redatto il {{ $article->created_at->format('d/m/Y')}} da {{ $article->user->name}}
+                            <a href="{{ route('article.editor', compact('article'))}}" class="btn btn-info text-white">Leggi</a>
+                        </div>
                     </div>
-                @endif
-                <form class="card p-5 shadow" action="" method="" enctype="multipart/form-data" >
-                    @csrf
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Titolo:</label>
-                        <input name="title" type="text" class="form-control" id="title" value="{{ $article->title }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="subtitle" class="form-label">Sottotitolo:</label>
-                        <input name="subtitle" type="text" class="form-control" id="subtitle" value="{{ $article->subtitle }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="image" class="form-label">Immagine:</label>
-                        <input name="image" type="file" class="form-control" id="image">
-                    </div>
-                    <div class="mb-3">
-                        <label for="category" class="form-label">Categoria:</label>
-                        <select name="category" id="category" class="form-control text-capitalize">
-                            @foreach($categories as $category)
-                                <option value="{{ $category }}" @if($article->category && $category == $article->cayegory) selected @endif>{{ $category->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="body" class="form-label">Corpo del testo:</label>
-                        <textarea name="body" id="body" cols="30" rows="7" class="form-control">{{ $article->body }}</textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="tags" class="form-label">Tags:</label>
-                        <input name="tags" id="tags" class="form-control" value="{{ $article->tags->implode('name', ', ') }}">
-                        <span class="small fst-italic">Dividi ogni tag con una virgola</span>
-                    </div>
-                    <div class="mt-2">
-                        <button class="btn btn-info text-white">Modifica un articolo</button>
-                        <a class="btn btn-outline-info" href="{{ route('homepage') }}">Torna alla home</a>
-                    </div>
-                </form>
-            </div>
+                </div>
+            @endforeach
         </div>
     </div>
     
