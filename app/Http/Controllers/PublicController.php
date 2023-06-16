@@ -56,4 +56,8 @@ class PublicController extends Controller
 
         return redirect(route('homepage'))->with('message', 'Grazie per averci contattato!');
     }
+
+    public function card(){
+        return view('card');
+    }
 }

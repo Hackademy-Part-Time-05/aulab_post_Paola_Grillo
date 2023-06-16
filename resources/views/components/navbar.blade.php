@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg p-0 fixed-top bg-primary">
+<nav class="navbar navbar-expand-lg p-3 fixed-top bg-warning">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-       <img class="logo rounded-circle" src= "{{ asset('./media/logo.jpeg')}}" alt="logo"> 
+       <img class="logo rounded-circle" src= "/a.png" alt="logo aulab"> 
        </a>
       <button class="navbar-toggler button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -12,7 +12,7 @@
             <a class="nav-link" aria-current="page" href="http://127.0.0.1:8000/">Home</a>
           </li>
           <li class="nav-item has-children">
-            <a class="nav-link" href="{{ route('article.create') }}">Inserisci un articolo</a>
+            <a class="nav-link"  aria-current="page" href="{{ route('card')}}">Inserisci un articolo</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="{{ route('careers')}}">Lavora con noi</a>
@@ -20,7 +20,7 @@
           @auth
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Benvenuto {{ Auth::user()->name }}
+              Benvenuto/a {{ Auth::user()->name }}
             </a>
             <ul class="dropdown-menu sub-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#">Profilo</a></li>

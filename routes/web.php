@@ -36,6 +36,8 @@ Route::get('/article/user/{user}', [App\Http\Controllers\ArticleController::clas
 Route::get('/article/editor/{editor}', [App\Http\Controllers\ArticleController::class, 'editor'])->name('article.editor');
 Route::get('/careers', [App\Http\Controllers\PublicController::class, 'careers'])->name('careers');
 Route::post('/careers/submit', [App\Http\Controllers\PublicController::class, 'careersSubmit'])->name('careers.submit');
+Route::get('/card', [App\Http\Controllers\PublicController::class, 'card'])->name('card');
+Route::post('/card/submit', [App\Http\Controllers\PublicController::class, 'card'])->name('card.submit');
 
 Route::middleware('admin')->group(function(){
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');

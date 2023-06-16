@@ -192,4 +192,9 @@ class ArticleController extends Controller
             return view('article.search-index', compact('articles', 'query'));
         }
 
+        public function card()
+        {
+            return view('article.card-component');
+        }
+
 }

@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid p-5 bg-info opacity-25 text-center text-white">
+    <div class="container-fluid p-5  text-center text-black">
         <div class="row justify-content-center">
             <h1 class="display-1">
                 Lavora con noi
@@ -8,7 +8,7 @@
     </div>
 
     <div class="container my-5">
-        <div class="row justify-content-center align-items-center border rounded p-2 shadow">
+        <div class="row justify-content-center align-items-center border rounded p-0 shadow">
             <div class="col-12 col-md-6">
                 <h2>Lavora come amministratore</h2>
                 <p>Cosa farai: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, cum.</p>
@@ -49,7 +49,7 @@
                         <textarea name="message" id="message" cols="30" rows="7" class="form-control">{{ old('message') }}</textarea>
                     </div>
                     <div class="my-2">
-                        <button class="btn btn-info text-white">Invia candidatura</button>
+                        <button class="btn btn-warning text-black">Invia candidatura</button>
                     </div>
                 </form>
             </div>

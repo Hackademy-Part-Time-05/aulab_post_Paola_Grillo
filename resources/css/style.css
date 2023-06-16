@@ -7,7 +7,7 @@
 body {
     font-family:'Rubik', sans-serif;;
     background-color: #fff;
-    background-image: url(https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?size=626&ext=jpg&ga=GA1.1.1448058093.1677063228&semt=ais);
+    background-image: url(https://th.bing.com/th/id/OIP.6fni-j5kCVFaecvdYUgnmwHaJT?pid=ImgDet&w=191&h=239&c=7&dpr=1,5);
     background-repeat: no-repeat;
     background-size: cover ;
 }
@@ -43,8 +43,8 @@ nav {
 }
 
 .menu a:hover {
-    color: #00d4ff;
-    border-bottom: 3px solid #00d4ff;
+    color: yellow;
+    border-bottom: 3px solid yellow;
     border-radius: 3px;
 }
 
@@ -66,7 +66,7 @@ nav {
 }
 
 .search:hover button {
-    background-color: #E6E6E6;
+    background-color: yellow;
 }
 .search:hover input button {
     border-radius: 50%;
@@ -78,18 +78,18 @@ nav {
     outline: none;
     padding: 0;
     font-size: 14px;
-    color: #fff;
+    color: yellow;
     width: 0;
     transition: 1s;
 }
 
 .search button {
-    color: #00B7FF;
+    color: yellow;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     border: none;
-    background-color: #333;
+    background-color: black;
     font-size: 10px;
     cursor: pointer;
     transition: 1s;
@@ -107,8 +107,8 @@ nav {
 /* Start Footer */
 .footer-basic {
     padding:40px 0;
-    background-color:#111111;
-    color:#4b4c4d;
+    background-color:rgb(255, 204, 0);
+    color:black;
   }
   
   .footer-basic ul {
@@ -125,7 +125,7 @@ nav {
   }
   
   .footer-basic ul a {
-    color:white;
+    color:black;
     text-decoration:none;
     opacity:0.8;
   }
@@ -147,7 +147,7 @@ nav {
     display:inline-block;
     text-align:center;
     border-radius:50%;
-    border:1px solid #00d4ff;
+    border:1px solid #ffc107;
     margin:0 8px;
     /* color:inherit; */
     opacity:0.75;
@@ -161,16 +161,16 @@ nav {
     margin-top:15px;
     text-align:center;
     font-size:13px;
-    color:#aaa;
+    color:black;
     margin-bottom:0;
   }
 
   .list a:hover{
-    color: #00d4ff;
-    border-bottom: 3px solid #00d4ff;
+    color: yellow;
+    border-bottom: 3px solid yellow;
   }
 
   .social a:hover{
-    color: #00d4ff;
-    border-color: #00d4ff;
+    color: yellow;
+    border-color: yellow;
   }
