@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg p-3 fixed-top bg-warning">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-       <img class="logo rounded-circle" src= "/a.png" alt="logo aulab"> 
+       <img class="logo rounded-circle" src= "https://th.bing.com/th/id/OIP.l1VeFTSzt8TKRfr8r9KjuwHaHi?w=164&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="logo aulab"> 
        </a>
       <button class="navbar-toggler button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
