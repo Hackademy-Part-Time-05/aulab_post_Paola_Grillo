@@ -19,14 +19,11 @@
           </li>
           @auth
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Benvenuto/a {{ Auth::user()->name }}
-            </a>
+            <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
+            @if(Auth::user()->is_admin)
             <ul class="dropdown-menu sub-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Profilo</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
-              @if(Auth::user()->is_admin)
+              
+             
               <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard Admin</a></li>
               @endif
               @if(Auth::user()->is_revisor)
