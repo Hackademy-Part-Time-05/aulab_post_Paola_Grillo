@@ -8,18 +8,18 @@ use App\Mail\CareerRequestMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
-class PublicController extends Controller
+class PublicController extends AdminController
 {
+    
     public function homepage() 
     {
         $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(4)->get();
         return view('welcome', compact('articles'));
     }
 
-    public function __construct(){
-        $this->middleware('auth')->except('homepage');
-    }
+    
 
+    
     public function careers(){
         return view('careers');
     }
@@ -52,12 +52,8 @@ class PublicController extends Controller
                 break; 
             }
             
-        $user->update();
+   
 
         return redirect(route('homepage'))->with('message', 'Grazie per averci contattato!');
-    }
-
-    public function card(){
-        return view('card');
     }
 }

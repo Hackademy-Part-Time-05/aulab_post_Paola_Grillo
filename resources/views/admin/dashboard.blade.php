@@ -1,6 +1,6 @@
 <x-layout>
     
-    <div class="container-fluid p-5 bg-info text-center text-black">
+    <div class="container-fluid p-5 text-center text-black">
         <div class="row justify-content-center">
             <h1 class="display-1">
                 Bentornato, Amministratore
@@ -9,7 +9,7 @@
     </div>
 
     @if(session('message'))
-        <div class="alert alert-success text-center p-4">
+        <div class="alert alert-success text-center">
             {{ session('message')}}
         </div>
     @endif
@@ -55,7 +55,7 @@
                 <form class="d-flex" action="{{ route('admin.storeCategory') }}" method="POST">
                     @csrf
                     <input type="text" name="name" class="form-control me-2" placeholder="Inserisci una nuova categoria">
-                    <button type="submit" class="btn btn-success text-black">Aggiungi</button>
+                    <button type="submit" class="btn btn-success text-white">Aggiungi</button>
                 </form>
             </div>
         </div>

@@ -29,6 +29,9 @@ Route::middleware('writer')->group(function(){
     Route::post('/article/store', [App\Http\Controllers\ArticleController::class, 'store'])->name('article.store');
 });
 
+
+Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create');
+
 Route::get('/article/index', [App\Http\Controllers\ArticleController::class, 'index'])->name('article.index');
 Route::get('/article/show/{article}', [App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
 Route::get('/article/category/{category}', [App\Http\Controllers\ArticleController::class, 'byCategory'])->name('article.byCategory');
@@ -36,8 +39,6 @@ Route::get('/article/user/{user}', [App\Http\Controllers\ArticleController::clas
 Route::get('/article/editor/{editor}', [App\Http\Controllers\ArticleController::class, 'editor'])->name('article.editor');
 Route::get('/careers', [App\Http\Controllers\PublicController::class, 'careers'])->name('careers');
 Route::post('/careers/submit', [App\Http\Controllers\PublicController::class, 'careersSubmit'])->name('careers.submit');
-Route::get('/card', [App\Http\Controllers\PublicController::class, 'card'])->name('card');
-Route::post('/card/submit', [App\Http\Controllers\PublicController::class, 'card'])->name('card.submit');
 
 Route::middleware('admin')->group(function(){
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
@@ -108,5 +109,8 @@ Route::middleware('writer')->group(function(){
     Route::delete('/article{article}/destroy', [App\Http\Controllers\ArticleController::class, 'destroy'])->name('article.destroy');
 });
 
-Route::get('/article{article:slug}/show', [App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
+// Route::get('/article{article:slug}/show', [App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
+
+Route::get('/article/{article:slug}/show', [App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
+
  

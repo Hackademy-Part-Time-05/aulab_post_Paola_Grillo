@@ -1,7 +1,8 @@
-<nav class="navbar navbar-expand-lg p-3 fixed-top bg-warning">
+<nav class="navbar navbar-expand-lg p-0 fixed-top bg-warning">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-       <img class="logo rounded-circle" src= "https://th.bing.com/th/id/OIP.l1VeFTSzt8TKRfr8r9KjuwHaHi?w=164&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="logo aulab"> 
+       <img class="logo rounded-circle" src=https://th.bing.com/th/id/OIP.CHluVEdMXQd1FfDf7X8VxQHaHa?w=185&h=185&c=7&r=0&o=5&dpr=1.5&pid=1.7 alt="the aulab post">
+        
        </a>
       <button class="navbar-toggler button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -12,18 +13,21 @@
             <a class="nav-link" aria-current="page" href="http://127.0.0.1:8000/">Home</a>
           </li>
           <li class="nav-item has-children">
-            <a class="nav-link"  aria-current="page" href="{{ route('card')}}">Inserisci un articolo</a>
+            <a class="nav-link" href="{{ route('article.create') }}">Inserisci un articolo</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="{{ route('careers')}}">Lavora con noi</a>
           </li>
           @auth
-          <li class="nav-item dropdown">
-            <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
-            @if(Auth::user()->is_admin)
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Benvenuto/a {{ Auth::user()->name }}
+            </a>
             <ul class="dropdown-menu sub-menu" aria-labelledby="navbarDropdown">
               
-             
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
+              @if(Auth::user()->is_admin)
               <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard Admin</a></li>
               @endif
               @if(Auth::user()->is_revisor)

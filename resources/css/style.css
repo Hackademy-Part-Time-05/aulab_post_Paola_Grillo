@@ -10,6 +10,7 @@ body {
     background-image: url(https://th.bing.com/th/id/OIP.6fni-j5kCVFaecvdYUgnmwHaJT?pid=ImgDet&w=191&h=239&c=7&dpr=1,5);
     background-repeat: no-repeat;
     background-size: cover ;
+    background-attachment: fixed;
 }
 
 .logo {
@@ -66,7 +67,7 @@ nav {
 }
 
 .search:hover button {
-    background-color: yellow;
+    background-color:yellow;
 }
 .search:hover input button {
     border-radius: 50%;
@@ -78,7 +79,7 @@ nav {
     outline: none;
     padding: 0;
     font-size: 14px;
-    color: yellow;
+    color: #fff;
     width: 0;
     transition: 1s;
 }
@@ -107,8 +108,8 @@ nav {
 /* Start Footer */
 .footer-basic {
     padding:40px 0;
-    background-color:rgb(255, 204, 0);
-    color:black;
+    background-color:#111111;
+    color:#4b4c4d;
   }
   
   .footer-basic ul {
@@ -137,6 +138,7 @@ nav {
   .footer-basic .social {
     text-align:center;
     padding-bottom:25px;
+    
   }
   
   .footer-basic .social > a {
@@ -147,10 +149,11 @@ nav {
     display:inline-block;
     text-align:center;
     border-radius:50%;
-    border:1px solid #ffc107;
+    border:1px solid black;
     margin:0 8px;
     /* color:inherit; */
     opacity:0.75;
+    color:black
   }
   
   .footer-basic .social > a:hover {
@@ -173,4 +176,11 @@ nav {
   .social a:hover{
     color: yellow;
     border-color: yellow;
+  }
+
+
+  .dropdown a{
+
+    border: none;
+    outline: none;
   }

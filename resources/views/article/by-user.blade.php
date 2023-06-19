@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="container-fluid p-5 bg-info opacity-25 text-center text-black">
+    <div class="container-fluid p-5  text-center text-black">
         <div class="row justify-content-center">
             <h1 class="display-1">
                 Redattore {{ $user->name }}
@@ -20,7 +20,7 @@
                         </div>
                         <div class="card-footer text-muted d-flex justify-content-between align-items-center">
                             Redatto il {{ $article->created_at->format('d/m/Y')}} da {{ $article->user->name}}
-                            <a href="{{ route('article.show', compact('article'))}}" class="btn btn-info text-black">Leggi</a>
+                            <a href="{{ route('article.show', compact('article'))}}" class="btn btn-info text-white">Leggi</a>
                         </div>
                     </div>
                 </div>

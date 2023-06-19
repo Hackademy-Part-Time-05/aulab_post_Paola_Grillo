@@ -1,6 +1,6 @@
 <x-layout>
     
-    <div class="container-fluid p-5 bg-info opacity-25 text-center text-white">
+    <div class="container-fluid p-5  text-center text-black">
         <div class="row justify-content-center">
             <h1 class="display-1">
                 Bentornato, Redattore
@@ -9,7 +9,7 @@
     </div>
 
     @if(session('message'))
-        <div class="alert alert-success text-center p-4">
+        <div class="alert alert-success text-center">
             {{ session('message')}}
         </div>
     @endif

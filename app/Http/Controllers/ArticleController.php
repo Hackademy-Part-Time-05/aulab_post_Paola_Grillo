@@ -41,40 +41,78 @@ class ArticleController extends Controller
         /**
          * Store a newly created resource in storage.
          */
-        public function store(Request $request)
-        {
-            $request->validate([
-                'title' => 'required|unique:articles|min:5',
-                'subtitle' => 'required|unique:articles|min:5',
-                'body' => 'required|min:10',
-                'image' => 'image|required',
-                'category' => 'required',
-                'tags' => 'required',
-            ]);
+    //     public function store(Request $request)
+    //     {
+    //         $request->validate([
+    //             'title' => 'required|unique:articles|min:5',
+    //             'subtitle' => 'required|unique:articles|min:5',
+    //             'body' => 'required|min:10',
+    //             'image' => 'image|required',
+    //             'category' => 'required',
+    //             'tags' => 'required',
+    //         ]);
 
-            $article = Article::create([
-                'title' => $request->title,
-                'subtitle' => $request->subtitle,
-                'body' => $request->body,
-                'image' => $request->file('image')->store('public/images'),
-                'category_id' => $request->category,
-                'user_id' => Auth::user()->id,
-                'slug' => Str::slug($request->title),
+    //         $article = Article::create([
+    //             'title' => $request->title,
+    //             'subtitle' => $request->subtitle,
+    //             'body' => $request->body,
+    //             'image' => $request->file('image')->store('public/images'),
+    //             'category_id' => $request->category,
+    //             'user_id' => Auth::user()->id,
+    //             'slug' => Str::slug($request->title),
                 
+    //         ]);
+
+    //         $tags = explode(', ', $request->tags);
+
+    //         foreach($tags as $tag){
+    //             $newTag = Tag::updateOrCreate([
+    //                 'name' => $tag,
+    //             ]);
+
+    //             $article->tags()->attach($newTag);
+    //         }
+    //         Auth::user()->articlecontrollers()->save($this->articlecontroller);
+    //         return redirect(route('homepage'))->with('message', 'Articolo creato correttamente');
+    // }
+    
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|unique:articles|min:5',
+            'subtitle' => 'required|unique:articles|min:5',
+            'body' => 'required|min:10',
+            'image' => 'image|required',
+            'category' => 'required',
+            'tags' => 'required',
+        ]);
+    
+        $article = Article::create([
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'body' => $request->body,
+            'image' => $request->file('image')->store('public/images'),
+            'category_id' => $request->category,
+            'user_id' => Auth::user()->id,
+            'slug' => Str::slug($request->title),
+        ]);
+    
+        $tags = explode(',', $request->tags);
+    
+        foreach ($tags as $tag) {
+            $tag = trim($tag); // Rimuove spazi bianchi all'inizio e alla fine del tag
+    
+            $newTag = Tag::updateOrCreate([
+                'name' => $tag,
             ]);
-
-            $tags = explode(', ', $request->tags);
-
-            foreach($tags as $tag){
-                $newTag = Tag::updateOrCreate([
-                    'name' => $tag,
-                ]);
-
-                $article->tags()->attach($newTag);
-            }
-
-            return redirect(route('homepage'))->with('message', 'Articolo creato correttamente');
+    
+            $article->tags()->attach($newTag);
+        }
+    
+        return redirect(route('homepage'))->with('message', 'Articolo creato correttamente');
     }
+    
+
 
     /**
      * Display the specified resource.
@@ -190,11 +228,6 @@ class ArticleController extends Controller
             $articles = Article::search($query)->where('is_accepted', true)->orderBy('created_at', 'desc')->get();
 
             return view('article.search-index', compact('articles', 'query'));
-        }
-
-        public function card()
-        {
-            return view('article.card-component');
         }
 
 }

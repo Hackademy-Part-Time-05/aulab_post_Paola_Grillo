@@ -1,4 +1,4 @@
-<div class="footer-basic">
+<div class="footer-basic bg-warning">
     <footer>
         <div class="social">
             <a href="https://it-it.facebook.com/"><i class="fa-brands fa-facebook"></i></a>

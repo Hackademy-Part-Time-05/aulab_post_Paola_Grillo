@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid p-5 text-center text-dark">
+    <div class="container-fluid p-5  text-center text-black">
         <div class="row justify-content-center">
             <h1 class="display-1">
                Registrati
@@ -21,7 +21,7 @@
                     </div>
                 @endif
     
-                <form class="card p-5 shadow" action="{{ route('register') }}" method="post">
+                <form  action="{{ route('register') }}" method="post">
                     @csrf
     
                     <div class="mb-3">
@@ -41,7 +41,7 @@
                         <input name="password_confirmation" type="password" class="form-control" id="password_confirmation">
                     </div>
                     <div class="mt-2">
-                        <button class="btn bg-warning text-dark">Registrati</button>
+                        <button class="btn bg-warning text-black">Registrati</button>
                         <p class="small mt-2">Già registrato?<a href="{{ route('login') }}">Clicca qui</a></p>
                     </div>
                 </form>
