@@ -29,14 +29,14 @@
                         @csrf
                         @method('put')
                         <input type="text" name="name" placeholder="Nuovo nome" class="form-control w-50 d-inline">
-                        <button type="submit" class="btn btn-info text-white">Aggiorna</button>
+                        <button type="submit" class="btn btn-warning text-black">Aggiorna</button>
                     </form>
                 </td>
                 <td>
                     <form action="{{ route('admin.deleteTag', ['tag' => $metaInfo]) }}" method="POST">
                         @csrf
                         @method('delete')
-                        <button type="submit" class="btn btn-danger text-white">Elimina</button>
+                        <button type="submit" class="btn btn-warning text-black">Elimina</button>
                     </form>
                 </td>
                 @else
@@ -45,14 +45,14 @@
                         @csrf
                         @method('put')
                         <input type="text" name="name" placeholder="Nuovo nome" class="form-control w-50 d-inline">
-                        <button type="submit" class="btn btn-info text-white">Aggiorna</button>
+                        <button type="submit" class="btn btn-warning text-black">Aggiorna</button>
                     </form>
                 </td>
                 <td>
                     <form action="{{ route('admin.deleteCategory', ['category' => $metaInfo]) }}" method="POST">
                         @csrf
                         @method('delete')
-                        <button type="submit" class="btn btn-danger text-white">Elimina</button>
+                        <button type="submit" class="btn btn-warning text-black">Elimina</button>
                     </form>
                 </td>
                 @endif

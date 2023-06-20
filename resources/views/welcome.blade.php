@@ -3,7 +3,7 @@
     <div class="container-fluid p-5  text-center text-black">
         <div class="row justify-content-center">
             <h1 class="display-1">
-                The Blog post
+                Aulab Post
             </h1>
             @if(session('message'))
                 <div class="alert alert-success text-center">
@@ -39,7 +39,7 @@
                         </div>
                         <div class="card-footer text-muted">
                             <a  class="" href="{{ route('article.byUser', ['user' => $article->user->id]) }}">Redatto il {{ $article->created_at->format('d/m/Y')}} da {{ $article->user->name }}</a>
-                            <a  href="{{ route('article.show', compact('article')) }}" class="btn btn-info text-white">Leggi</a>
+                            <a  href="{{ route('article.show', compact('article')) }}" class="btn btn-warning text-black">Leggi</a>
                         </div>
                     </div>
                 </div>

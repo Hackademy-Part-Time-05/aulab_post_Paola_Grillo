@@ -53,8 +53,8 @@
                         <span class="small fst-italic">Dividi ogni tag con una virgola</span>
                     </div>
                     <div class="mt-2">
-                        <button class="btn btn-info text-white">Modifica un articolo</button>
-                        <a class="btn btn-outline-info" href="{{ route('homepage') }}">Torna alla home</a>
+                        <button class="btn btn-warning text-black">Modifica un articolo</button>
+                        <a class="btn btn-warning text-black" href="{{ route('homepage') }}">Torna alla home</a>
                     </div>
                 </form>
             </div>

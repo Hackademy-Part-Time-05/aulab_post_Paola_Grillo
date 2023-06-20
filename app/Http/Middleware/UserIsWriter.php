@@ -21,6 +21,6 @@ class UserIsWriter
             return $next($request);
         }
 
-        return redirect(route('homepage'))->with('message', 'Articolo inserito');
+        return redirect(route('homepage'))->with('message', 'Non hai il permesso di creare un articolo');
     }
 }
